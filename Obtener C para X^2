@@ -1,0 +1,53 @@
+import numpy as np
+import math
+
+#aqui se edita la lista a evaluar
+nums=[0.97,0.11,0.65,0.26,0.98,0.03,0.13,0.89,0.21,0.69]
+#cantidad de números
+l=float(len(nums))
+#intervalo m
+m=round(math.sqrt(l))
+#paso del intervalo
+p=1/m
+#print p
+#Lista de frecuencias observadas
+Fo=[]
+#contador de numero de intervalo
+i=0
+#Numero de espacio en la lista entregada
+n=0
+#rango inferior
+j=0
+print "               Intervalo        /           FO        /    FE"
+#f(x) es 1 dado que el rango es para valores aleatorios entre 0 y 1 por ende F(x)
+#al ser la antiderivada de f(x) nos entrega el valor del rango, en este caso "p"
+Fx=p
+Fe=Fx*l
+while m>i:
+  #contador de frencuencia observada
+  k=0
+  jj=j+p
+  while l>n:
+    nms=nums[n]
+    if nms>j and nms<=jj:
+      k=k+1
+    n=n+1
+  print "mayor a ",j,"menor igual a",jj," / ",k, " / ",Fe
+  print ""
+  Fo.append(k)
+  i=i+1
+  j=j+p
+  n=0
+ll=len(Fo)
+C=0
+z=0
+fon=Fo[z]
+while ll>z:
+  s=Fe-fon
+  s=s*s
+  C=C+s
+  z=z+1
+print ""
+print ""
+print "El valor de c es:" ,C
+
