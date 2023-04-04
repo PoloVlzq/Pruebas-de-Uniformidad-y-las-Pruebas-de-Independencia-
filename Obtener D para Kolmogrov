@@ -1,0 +1,51 @@
+import numpy as np
+import math
+#lista a evaluar
+nums=[0.97,0.11,0.65,0.26,0.98,0.03,0.13,0.89,0.21,0.69]
+nums.sort()
+#print nums
+l=len(nums)
+n=0
+i=[]
+y=[]
+r=[]
+du=[]
+dd=[]
+DD=[]
+while n<l:
+  ii=n+1
+  i.append(ii)
+  yn=ii/l
+  y.append(yn)
+  res=(ii-1)/l
+  r.append(res)
+  nm=nums[n]
+  dmx=yn-nm
+  du.append(dmx)
+  dmn=nm-res
+  dd.append(dmn)
+  
+  n=n+1
+print "      i     " ,i
+print ""
+print "     i/n    ",y
+print ""
+print "     ri     ",nums
+print ""
+print "   (i-1)/n  ",r
+print ""
+print "  1/n - ri  ",du
+print ""
+print "ri - (i-1)/n",dd
+print ""
+
+Du=max(du)
+DD.append(Du)
+print "Valor de D+ es:",Du
+Dd=max(dd)
+DD.append(Dd)
+print ""
+print "Valor de D- es:",Dd
+D=max(DD)
+print""
+print "Por lo que el valor D será:",D
